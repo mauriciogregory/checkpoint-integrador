@@ -8,13 +8,14 @@ public class Products {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_product")
     private Integer id;
     private String title;
     private String description;
     private Double price;
     private String image;
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "category_id")
+    @JoinColumn(name = "id_category")
     private Categories categories;
 
     public Products() {

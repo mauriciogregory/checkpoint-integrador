@@ -9,6 +9,7 @@ public class Categories {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_category")
     private Integer id;
     private String nome;
     @OneToMany(mappedBy = "categories", fetch = FetchType.LAZY)
