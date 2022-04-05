@@ -33,12 +33,12 @@ public class ProductsController {
     public ResponseEntity<Products> buscarPorId(@PathVariable Integer id){
 
         return ResponseEntity.ok(productService.buscarPorId(id).orElseThrow(
-                ()-> new ResponseStatusException(NOT_FOUND, "Jogador não encontrado")
+                ()-> new ResponseStatusException(NOT_FOUND, "Produto não encontrado")
         ));
     }
 
     @PostMapping
-    public ResponseEntity<?> salvarJogador(@RequestBody Products product) {
+    public ResponseEntity<?> salvarProduto(@RequestBody Products product) {
         productService.salvar(product);
 
         return new ResponseEntity<>(HttpStatus.OK);
