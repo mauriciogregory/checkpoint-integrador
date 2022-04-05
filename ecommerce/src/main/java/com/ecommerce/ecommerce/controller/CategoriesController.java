@@ -11,7 +11,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
-@Service
+
 @RestController
 @RequestMapping("/categories")
 public class CategoriesController {
@@ -23,8 +23,8 @@ public class CategoriesController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Categories>> buscarTodas(){
-        return ResponseEntity.ok(categoriesService.buscarTodas());
+    public ResponseEntity<List<Categories>> buscarTodos(){
+        return ResponseEntity.ok(categoriesService.buscarTodos());
     }
 
     @GetMapping("/{id}")
@@ -56,7 +56,7 @@ public class CategoriesController {
     }
 
 
-    @PutMapping
+    @PutMapping("/{id}")
     public ResponseEntity<String> atualizar(@PathVariable Integer id, @RequestBody Categories categories){
         ResponseEntity<String> responseEntity = null;
 

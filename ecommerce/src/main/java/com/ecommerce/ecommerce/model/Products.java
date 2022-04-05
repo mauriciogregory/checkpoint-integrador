@@ -3,7 +3,7 @@ package com.ecommerce.ecommerce.model;
 import javax.persistence.*;
 
 @Entity
-@Table
+@Table (name = "tb_products")
 public class Products {
 
     @Id
@@ -14,6 +14,7 @@ public class Products {
     private String description;
     private Double price;
     private String image;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_category")
     private Categories categories;
@@ -21,19 +22,21 @@ public class Products {
     public Products() {
     }
 
-    public Products(Integer id, String title, String description, Double price, String image) {
+    public Products(Integer id, String title, String description, Double price, String image, Categories categories) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.price = price;
         this.image = image;
+        this.categories = categories;
     }
 
-    public Products(String title, String description, Double price, String image) {
+    public Products(String title, String description, Double price, String image, Categories categories) {
         this.title = title;
         this.description = description;
         this.price = price;
         this.image = image;
+        this.categories = categories;
     }
 
     public Integer getId() {

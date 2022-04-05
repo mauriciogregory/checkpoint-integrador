@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.*;
 
 @Entity
-@Table
+@Table (name = "tb_categories")
 public class Categories {
 
     @Id

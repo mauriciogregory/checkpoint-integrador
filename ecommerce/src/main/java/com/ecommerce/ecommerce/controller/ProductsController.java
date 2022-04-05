@@ -12,7 +12,6 @@ import static org.springframework.http.HttpStatus.*;
 
 import java.util.List;
 
-@Service
 @RestController
 @RequestMapping("/products")
 public class ProductsController {
