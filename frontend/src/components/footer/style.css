@@ -1,0 +1,13 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.footer{
+    bottom: 0;
+    height: 60vh;
+    background-color: rgb(65, 62, 62);
+    width: 100vw;
+}
+
