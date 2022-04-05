@@ -51,7 +51,7 @@ public class ProductsController {
 
         if(productService.buscarPorId(id).isPresent()) {
             productService.excluir(id);
-            responseEntity = ResponseEntity.status(NO_CONTENT).body("Excluído");
+            responseEntity = ResponseEntity.status(NO_CONTENT).body("Produto Excluído");
         } else {
             responseEntity = ResponseEntity.status(NOT_FOUND).build();
         }
@@ -69,7 +69,7 @@ public class ProductsController {
             productService.salvar(product);
             responseEntity = new ResponseEntity<>(OK);
         } else {
-            responseEntity = ResponseEntity.status(NOT_FOUND).body("Not_Found");
+            responseEntity = ResponseEntity.status(NOT_FOUND).body("Produto não encontrado!");
         }
 
         return responseEntity;

@@ -2,7 +2,6 @@ package com.ecommerce.ecommerce.controller;
 
 import com.ecommerce.ecommerce.model.Categories;
 import com.ecommerce.ecommerce.service.CategoriesService;
-import com.ecommerce.ecommerce.service.ProductsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -42,19 +41,19 @@ public class CategoriesController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-//    @DeleteMapping("/{id}")
-//    public ResponseEntity<String> excluir(@PathVariable Integer id){
-//        ResponseEntity<String> responseEntity = null;
-//
-//        if(categoriesService.buscarPorId(id).isPresent()){
-//            categoriesService.excluir(id);
-//            responseEntity = ResponseEntity.status(HttpStatus.NO_CONTENT).body("Excluído!");
-//        } else {
-//            responseEntity = ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-//        }
-//
-//        return responseEntity;
-//    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> excluir(@PathVariable Integer id){
+        ResponseEntity<String> responseEntity = null;
+
+        if(categoriesService.buscarPorId(id).isPresent()){
+            categoriesService.excluir(id);
+            responseEntity = ResponseEntity.status(HttpStatus.NO_CONTENT).body("Categoria Excluída!");
+        } else {
+            responseEntity = ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+
+        return responseEntity;
+    }
 
 
     @PutMapping
@@ -66,12 +65,10 @@ public class CategoriesController {
             categoriesService.salvar(categories);
             responseEntity = new ResponseEntity<>(HttpStatus.OK);
         } else {
-            responseEntity = ResponseEntity.status(HttpStatus.NOT_FOUND).body("Not Found");
+            responseEntity = ResponseEntity.status(HttpStatus.NOT_FOUND).body("Categoria não encontrada!");
 
         }
-
         return responseEntity;
     }
-
 
 }
