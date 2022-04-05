@@ -1,9 +1,10 @@
 import './App.css';
+import Rotas from '../src/routes/index'
+
 
 export default function App() {
   return (
-    <div className="App">
-    </div>
+    <Rotas/>
   );
 }
 
