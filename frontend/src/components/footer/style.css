@@ -1,0 +1,32 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.footer{
+    height: 50%;
+    background-color: rgb(44, 42, 42);
+    color: white;
+    width: 100vw;
+}
+
+.footer-medias{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.footer-medias li a{
+    color: inherit;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.footer-medias li a:hover{
+    color: orange;
+}
+
+
+
+
