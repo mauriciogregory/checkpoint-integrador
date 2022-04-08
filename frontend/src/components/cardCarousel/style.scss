@@ -1,0 +1,12 @@
+.card-carousel{
+}
+
+.card-img{
+    height: 300px;
+}
+
+@media (max-width: 280px){
+    .card-img{
+        height: 150px;
+    }
+}

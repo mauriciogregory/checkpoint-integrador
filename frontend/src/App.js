@@ -1,4 +1,4 @@
-import Rotas from '../src/routes/index'
+import Rotas from './routes/index'
 
 export default function App() {
   return (

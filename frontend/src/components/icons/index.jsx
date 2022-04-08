@@ -1,9 +1,9 @@
-import './style.css'
+import './style.scss'
 
 export default function IconList(props){
     return(
         <li>
-            <a className="icons" href={props.site} target="_blank">{props.icon}</a>
+            <a className="icons" href="#" target="_blank">{props.icon}</a>
         </li>
     );
 }

@@ -5,7 +5,6 @@
 }
 
 .footer{
-    height: 50%;
     background-color: rgb(44, 42, 42);
     color: white;
     width: 100vw;
@@ -14,7 +13,7 @@
 .footer-medias{
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 20px;
 }
 
 .footer-medias li a{
@@ -25,8 +24,8 @@
 
 .footer-medias li a:hover{
     color: orange;
+    cursor: pointer;
 }
-
 
 
 

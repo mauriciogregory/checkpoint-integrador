@@ -1,30 +1,39 @@
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css'; // BOOTSTRAP
-import './style.css';
+import './style.scss';
 import { GrCart } from 'react-icons/gr';
 import Logo from '../../assets/img/logo.png'
+import { Link } from 'react-router-dom';
 
 export default function Header(){
     return(
-    <header fixed="top">
-        <Navbar className="header-nav"collapseOnSelect expand="lg" bg="light" variant="light">
-            <Container fluid>
+    <header>
+        <Navbar className="header-nav"collapseOnSelect expand="lg" variant="light">
                 <Navbar.Brand>
                 <img alt="logo" className="logo" src={Logo}></img>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse className="justify-content-end" id="responsive-navbar-nav">
                     <Nav className="nav-list">
-                        <Nav.Link className="list-header">Home</Nav.Link>
-                        <Nav.Link className="list-header">Produtos</Nav.Link>
-                        <Nav.Link  className="list-header">Sobre Nós</Nav.Link>
-                        <Nav.Link className="list-header">Administração</Nav.Link>
+                        <Link to={"/"}>
+                            <Nav.Item className="list-header">Home</Nav.Item>
+                        </Link>
+                        <Link to={"/products"}>
+                            <Nav.Item className="list-header">Produtos</Nav.Item>
+                        </Link>
+                        <Link to={"/about"}>
+                            <Nav.Item className="list-header">Sobre nós</Nav.Item>
+                        </Link>
+                        <Link to={"/admin"}>
+                            <Nav.Item className="list-header">Administração</Nav.Item>
+                        </Link>
                     </Nav>
                     <Nav>
-                        <Nav.Link className="cart-header">{<GrCart/>}</Nav.Link>
+                        <Link to={"/cart"}>
+                            <Nav.Item className="cart-header">{<GrCart/>}</Nav.Item>
+                        </Link>
                     </Nav>
                 </Navbar.Collapse>
-            </Container>
         </Navbar>
     </header>
       

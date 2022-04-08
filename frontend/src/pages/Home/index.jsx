@@ -1,12 +1,13 @@
 import Header from '../../components/header/index'
 import Footer from '../../components/footer/index'
 import FooterDown from '../../components/footerdown/index'
+import CarouselComponent from '../../components/carousel/index'
 
 export default function Home() {
     return (
         <div>
             <Header />
-            <h1>Aqui será a Home</h1>
+            <CarouselComponent/>
             <Footer />
             <FooterDown />
         </div>

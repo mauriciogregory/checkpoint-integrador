@@ -1,4 +1,4 @@
-import './style.css'
+import './style.scss'
 import { FaFacebook, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import { Container, Row, Col} from 'react-bootstrap'
 import IconsList from '../icons/index';
@@ -30,10 +30,11 @@ export default function Footer(){
                 </Col>
             </Row>
             <div className="icons-list">
+
                 <ul className="footer-medias">
-                   <IconsList site="https://www.linkedin.com/in/vin%C3%ADcius-alexandre-850b63219/" icon={<FaLinkedin/>}/>
-                   <IconsList site="https://discord.com/channels/@me" icon={<FaFacebook/>} />
-                   <IconsList site="https://viniTWLgithub.com/" icon={<FaInstagram/>}/>
+                   <IconsList icon={<FaLinkedin/>}/>
+                   <IconsList icon={<FaFacebook/>} />
+                   <IconsList icon={<FaInstagram/>}/>
                </ul>
             </div>
                 </Container>
