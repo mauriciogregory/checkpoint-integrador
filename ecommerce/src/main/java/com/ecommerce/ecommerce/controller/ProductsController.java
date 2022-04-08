@@ -1,6 +1,8 @@
 package com.ecommerce.ecommerce.controller;
 
+import com.ecommerce.ecommerce.model.Categories;
 import com.ecommerce.ecommerce.model.Products;
+import com.ecommerce.ecommerce.service.CategoriesService;
 import com.ecommerce.ecommerce.service.ProductsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,11 +18,13 @@ import java.util.List;
 @RequestMapping("/products")
 public class ProductsController {
 
-    private final ProductsService productService;
+    private  ProductsService productService;
+    private  CategoriesService categoriesService;
 
     @Autowired
-    public ProductsController(ProductsService productService) {
+    public ProductsController(ProductsService productService, CategoriesService categoriesService) {
         this.productService = productService;
+        this.categoriesService = categoriesService;
     }
 
     @GetMapping
@@ -37,16 +41,17 @@ public class ProductsController {
     }
 
     @PostMapping
-    public ResponseEntity<?> salvarProduto(@RequestBody Products product) {
+    public ResponseEntity<Products> salvarProduto(@RequestBody Products product) {
+        categoriesService.salvar(product.getCategories());
         productService.salvar(product);
-
         return new ResponseEntity<>(HttpStatus.OK);
+//          return ResponseEntity.ok(productService.salvar(product));
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<String> excluir(@PathVariable Integer id) {
 
-        ResponseEntity<String> responseEntity = null;
+        ResponseEntity<String> responseEntity;
 
         if(productService.buscarPorId(id).isPresent()) {
             productService.excluir(id);
@@ -61,7 +66,7 @@ public class ProductsController {
     @PutMapping("/{id}")
     public ResponseEntity<String> atualizar(@PathVariable Integer id, @RequestBody Products product) {
 
-        ResponseEntity<String> responseEntity = null;
+        ResponseEntity<String> responseEntity;
 
         if(productService.buscarPorId(id).isPresent()) {
             product.setId(id);

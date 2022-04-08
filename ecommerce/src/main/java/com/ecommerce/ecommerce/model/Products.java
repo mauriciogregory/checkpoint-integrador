@@ -15,7 +15,8 @@ public class Products {
     private Double price;
     private String image;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+//    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "id_category")
     private Categories categories;
 
@@ -79,14 +80,23 @@ public class Products {
         this.image = image;
     }
 
+    public Categories getCategories() {
+        return categories;
+    }
+
+    public void setCategories(Categories categories) {
+        this.categories = categories;
+    }
+
     @Override
     public String toString() {
-        return "Product{" +
+        return "Products{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
                 ", price=" + price +
                 ", image='" + image + '\'' +
+                ", categories=" + categories +
                 '}';
     }
 }
