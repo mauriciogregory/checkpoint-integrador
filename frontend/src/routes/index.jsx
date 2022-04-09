@@ -5,13 +5,14 @@ import Cart from "../pages/Cart/index";
 import AboutUs from "../pages/AboutUs/index";
 
 import Admin from "../pages/Admin";
+import Products from "../pages/Products";
 
 export default function Rotas() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* <Route path="" element={} /> */}
+        <Route path="/products" element={<Products />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="*" element={<Erro404 />} />
         <Route path="/cart" element={<Cart />} />
