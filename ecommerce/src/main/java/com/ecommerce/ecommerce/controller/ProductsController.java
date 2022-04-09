@@ -15,6 +15,7 @@ import static org.springframework.http.HttpStatus.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping("/products")
 public class ProductsController {
 
