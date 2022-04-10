@@ -33,7 +33,7 @@ public class Seeding implements ApplicationRunner {
         categoriesRepository.save(cat4);
 
         Products prod = new Products("Bateria Acústica Premium DX722 Bumbo 22","Bateria com pratos de alta tecnologia, para iniciantes.", 2000.0, "https://http2.mlstatic.com/D_NQ_NP_899447-MLB31767940279_082019-O.jpg", cat1);
-        Products prod1 = new Products("Flauta","Instrumento de ótima qualidade", 800.0, "www.imagem.com", cat2);
+        Products prod1 = new Products("Flauta","Instrumento de ótima qualidade", 80.00, "https://m.media-amazon.com/images/I/51dDUd9e8fL._AC_SY450_.jpg", cat2);
         Products prod2 = new Products("Violão", "GIANNINI N-14Bk Violão Acústico Preto", 312.21, "https://m.media-amazon.com/images/I/419CgWR0hkL._AC_.jpg" , cat3);
         Products prod3 = new Products("Bateria", "Bateria Acústica 2 Tons ESL Prata NY F1rst", 2.289, "https://m.media-amazon.com/images/I/61opBmhlcqL._AC_SX679_.jpg"
         , cat1);
@@ -46,7 +46,7 @@ public class Seeding implements ApplicationRunner {
         , cat4);
         Products prod8 = new Products("Cavaco", "CAVACO ROZINI ESTUDANTE ELETRICO NATURAL RC09ELN", 699.00, "https://m.media-amazon.com/images/I/51OT7lXN50L._AC_SX679_.jpg"
         , cat3);
-        Products prod9 = new Products("Flauta", "Flauta Doce Soprano Barroca C, Yamaha, YRS-24B", 56.75, "https://m.media-amazon.com/images/I/41YA2rSViNL._AC_SX679_.jpg"
+        Products prod9 = new Products("Flauta", "Flauta Doce Soprano Barroca C, Yamaha, YRS-24B", 56.75, "https://m.media-amazon.com/images/I/51dDUd9e8fL._AC_SY450_.jpg"
         , cat2);
         Products prod10 = new Products("Reco-Reco", "Reco Reco Spanking 02 molas Alumínio", 68.99, "https://m.media-amazon.com/images/I/61EB151tMnL._AC_SX679_.jpg"
         , cat1);

@@ -1,0 +1,12 @@
+.grid-produtos {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  margin: 1.5rem;
+}
+
+.produto-card {
+  border: solid 2px tomato;
+  max-width: 20rem;
+  height: 25rem;
+}
