@@ -12,11 +12,11 @@ import './styles.scss';
 export default function Products() {
   const [products, setProducts] = useState([]);
 
-  useEffect(() => {
+ useEffect(() => {
     axios.get("http://localhost:8080/products").then((resposta) => {
       setProducts(resposta.data);
     });
-  }, []);
+  }, []); 
 
   return (
     <section>

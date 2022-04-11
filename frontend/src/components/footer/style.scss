@@ -7,7 +7,7 @@
 .footer{
     background-color: rgb(44, 42, 42);
     color: white;
-    width: 100vw;
+    height: 30vh;
 }
 
 .footer-medias{
@@ -27,5 +27,5 @@
     cursor: pointer;
 }
 
-
-
+@media screen and (max-width: 500px){
+}
