@@ -9,6 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 import api from '../../service/api';
 import axios from 'axios';
 import { GrCart } from 'react-icons/gr';
+import { formatPrice, formatData } from '../../hooks/useUtil';
 
 export default function CarouselComponent(){
 
@@ -56,17 +57,17 @@ export default function CarouselComponent(){
           ],
         };
       return (
-        <div className="mt-4 mb-1 d-flex align-items-center text-uppercase fw-bold">
+        <div className="mt-4 mb-1 d-flex align-items-center">
         <Container className='cont-carousel'>
             <Slider {...settings}>
                 {products.map( ( {id, title, description, price, image } ) => (
                     <div className="cards">
-                    <Card key={id} className="card-carousel" style={{ width: '18rem' }}>
+                    <Card key={id} className="card-carousel" style={{ width: '21rem' }}>
                         <Card.Img className="card-img" variant="top" src={image} alt={description} />
                         <Card.Body>
                             <Card.Title className='card-title'>{title}</Card.Title>
                             <Card.Text className='card-text'>
-                            R$ {price}
+                             {formatPrice(price)}
                             </Card.Text>
                             <Button className="card-buy-button">{<GrCart/>}</Button>
                         </Card.Body>
