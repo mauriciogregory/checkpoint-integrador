@@ -1,10 +1,11 @@
 package com.ecommerce.ecommerce.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table (name = "tb_products")
-public class Products {
+public class Products implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,9 +16,10 @@ public class Products {
     private Double price;
     private String image;
 
-//    @ManyToOne(fetch = FetchType.LAZY)
-    @ManyToOne
-    @JoinColumn(name = "id_category")
+    @ManyToMany // fetch type lazy default
+    @JoinTable(name = "productcategory",  // cria tabela N > N
+        joinColumns = @JoinColumn(name = "id_product"), inverseJoinColumns = @JoinColumn(name = "id_category"))
+
     private Categories categories;
 
     public Products() {

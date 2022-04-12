@@ -1,14 +1,28 @@
 package com.ecommerce.ecommerce.service;
 
+import com.ecommerce.ecommerce.DTO.ProductsDTO;
 import com.ecommerce.ecommerce.model.Products;
+import com.ecommerce.ecommerce.repository.ProductsRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
-public interface ProductsService {
-    void salvar(Products product);
-    List<Products> buscarTodos();
-    Optional<Products> buscarPorId(Integer id);
-    void excluir(Integer id);
+@Service
+public class ProductsService {
+
+    @Autowired
+    private ProductsRepository productRepository;
+
+    @Transactional(readOnly = true)
+    public Page<ProductsDTO> buscarTodos(PageRequest pageRequest){
+
+        Page<Products> result = productRepository.findAll(pageRequest);
+        Page<ProductsDTO> page = result.map(ProductsDTO::new);
+        return page;
+}
 }
