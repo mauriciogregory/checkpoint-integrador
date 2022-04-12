@@ -2,6 +2,8 @@ package com.ecommerce.ecommerce.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table (name = "tb_products")
@@ -9,7 +11,7 @@ public class Products implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_product")
+//    @Column(name = "id_product")
     private Integer id;
     private String title;
     private String description;
@@ -18,14 +20,16 @@ public class Products implements Serializable {
 
     @ManyToMany // fetch type lazy default
     @JoinTable(name = "productcategory",  // cria tabela N > N
-        joinColumns = @JoinColumn(name = "id_product"), inverseJoinColumns = @JoinColumn(name = "id_category"))
+        joinColumns = @JoinColumn(name = "id_product"),
+            inverseJoinColumns = @JoinColumn(name = "id_category")
+    )
 
-    private Categories categories;
+    Set<Categories> categories =new HashSet<>();
 
     public Products() {
     }
 
-    public Products(Integer id, String title, String description, Double price, String image, Categories categories) {
+    public Products(Integer id, String title, String description, Double price, String image, Set<Categories> categories) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -34,7 +38,7 @@ public class Products implements Serializable {
         this.categories = categories;
     }
 
-    public Products(String title, String description, Double price, String image, Categories categories) {
+    public Products(String title, String description, Double price, String image, Set<Categories> categories) {
         this.title = title;
         this.description = description;
         this.price = price;
@@ -82,13 +86,13 @@ public class Products implements Serializable {
         this.image = image;
     }
 
-    public Categories getCategories() {
+    public Set<Categories> getCategories() {
         return categories;
     }
 
-    public void setCategories(Categories categories) {
-        this.categories = categories;
-    }
+//    public void setCategories(Set<Categories> categories) {
+//        this.categories = categories;
+//    }
 
     @Override
     public String toString() {

@@ -1,11 +1,11 @@
 package com.ecommerce.ecommerce.DTO;
 
 import com.ecommerce.ecommerce.model.Products;
-import java.util.stream.Collectors;
 
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ProductsDTO {
 
@@ -35,7 +35,8 @@ public class ProductsDTO {
         description = products.getDescription();
         price = products.getPrice();
         image = products.getImage();
-        categories = products.getCategories().stream().map(CategoriesDTO::new).collect(Collectors.toList());
+        categories = products.getCategories().stream().map(
+                x -> new CategoriesDTO(x)).collect(Collectors.toList());
     }
 
     public Integer getId() {

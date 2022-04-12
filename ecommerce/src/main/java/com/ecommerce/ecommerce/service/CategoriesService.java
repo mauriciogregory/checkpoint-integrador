@@ -3,6 +3,7 @@ package com.ecommerce.ecommerce.service;
 import com.ecommerce.ecommerce.DTO.CategoriesDTO;
 import com.ecommerce.ecommerce.model.Categories;
 import com.ecommerce.ecommerce.repository.CategoriesRepository;
+import com.ecommerce.ecommerce.service.Exception.EntidadeNaoEncontrada;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.domain.Page;
@@ -29,7 +30,7 @@ public class CategoriesService {
     @Transactional
     public CategoriesDTO buscarPorId(Integer id){
         Optional<Categories> categoryOptional = categoriesRepository.findById(id);
-        Categories categories = categoryOptional.orElseThrow(() -> new EntitieNotFound("Entidade não encontrada!"));
+        Categories categories = categoryOptional.orElseThrow(() -> new EntidadeNaoEncontrada("Entidade não encontrada!"));
         return new CategoriesDTO(categories);
     }
 }
