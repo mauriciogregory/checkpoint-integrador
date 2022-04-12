@@ -19,12 +19,24 @@ const dados = [
         name: 'William',
         description: 'Full-stack developer',
         url: 'https://avatars.githubusercontent.com/u/85083548?v=4'
+    },
+    {
+        id: 4,
+        name: 'Guilherme',
+        description: 'Full-stack developer',
+        url: 'https://avatars.githubusercontent.com/u/85465349?v=4'
+    },
+    {
+        id: 5,
+        name: 'Maycon',
+        description: 'Full-stack developer',
+        url: 'https://avatars.githubusercontent.com/u/53102048?v=4'
     }
 ];
 
 export default function CardAbout() {
     return(
-        <Container className='container'>
+        <Container>
         <div className="cards-about">
         {dados.map( ( {id, name, description, url} ) => (
         <div key={id} className="card-about-container">
@@ -43,7 +55,7 @@ export default function CardAbout() {
         </div>
         ))}
         </div>
-            </Container>
+        </Container>
     )
 
 }
