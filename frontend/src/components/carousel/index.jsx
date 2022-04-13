@@ -47,7 +47,7 @@ export default function CarouselComponent(){
               },
             },
             {
-              breakpoint: 600,
+              breakpoint: 800,
               settings: {
                 slidesToShow: 1,
                 slidesToScroll: 1,

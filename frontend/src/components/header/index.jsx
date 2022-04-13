@@ -10,7 +10,7 @@ export default function Header(){
     <header>
         <Navbar className="header-nav"collapseOnSelect expand="lg" variant="light">
                 <Navbar.Brand>
-                <img alt="logo" className="logo" src={Logo}></img>
+                <h1>CTD Music Store</h1>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse className="justify-content-end" id="responsive-navbar-nav">

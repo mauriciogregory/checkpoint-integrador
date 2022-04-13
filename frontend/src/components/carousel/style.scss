@@ -1,5 +1,6 @@
 .cont-carousel{
     height: auto;
+    margin-bottom: 30px;
 }
 
 .card-carousel{
@@ -8,7 +9,12 @@
 }
 
 .card-title{
-    font-size: 35px!important;
+    font-size: 22px!important;
+    text-align: center;
+}
+
+.card-text{
+    font-size: 39px!important;
 }
 
 .card-buy-button{
