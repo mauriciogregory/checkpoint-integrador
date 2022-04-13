@@ -1,6 +1,6 @@
 package com.ecommerce.ecommerce.DTO;
 
-import com.ecommerce.ecommerce.model.Categories;
+import com.ecommerce.ecommerce.entities.Categories;
 
 public class CategoriesDTO {
 

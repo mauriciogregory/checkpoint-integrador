@@ -1,7 +1,5 @@
 package com.ecommerce.ecommerce.util;
 
-import com.ecommerce.ecommerce.model.Categories;
-import com.ecommerce.ecommerce.model.Products;
 import com.ecommerce.ecommerce.repository.CategoriesRepository;
 import com.ecommerce.ecommerce.repository.ProductsRepository;
 import org.springframework.beans.factory.annotation.Autowired;

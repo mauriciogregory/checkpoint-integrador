@@ -1,4 +1,4 @@
-package com.ecommerce.ecommerce.model;
+package com.ecommerce.ecommerce.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -10,6 +10,7 @@ public class Categories implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_category")
     private Integer id;
     private String name;
 

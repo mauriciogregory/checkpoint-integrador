@@ -1,6 +1,6 @@
 package com.ecommerce.ecommerce.DTO;
 
-import com.ecommerce.ecommerce.model.Products;
+import com.ecommerce.ecommerce.entities.Products;
 
 
 import java.util.ArrayList;

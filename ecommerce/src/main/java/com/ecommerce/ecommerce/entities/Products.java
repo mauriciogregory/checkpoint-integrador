@@ -1,4 +1,4 @@
-package com.ecommerce.ecommerce.model;
+package com.ecommerce.ecommerce.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -6,12 +6,12 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table (name = "tb_products")
+@Table (name = "products")
 public class Products implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    @Column(name = "id_product")
+    @Column(name = "id_product")
     private Integer id;
     private String title;
     private String description;
