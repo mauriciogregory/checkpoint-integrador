@@ -1,15 +1,13 @@
 import './style.scss';
-import { Carousel, Card, Button, CardGroup, Container } from 'react-bootstrap';
+import { Card, Button, Container } from 'react-bootstrap';
 import { useState, useEffect} from 'react'
-import { useParams }  from "react-router-dom"
 import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import api from '../../service/api';
-import axios from 'axios';
 import { GrCart } from 'react-icons/gr';
-import { formatPrice, formatData } from '../../hooks/useUtil';
+import { formatPrice } from '../../hooks/useUtil';
 
 export default function CarouselComponent(){
 
@@ -21,8 +19,9 @@ export default function CarouselComponent(){
 
     const getApiData = async () => {
       try{
-        const response = await api.get()
-        setProducts(response.data)
+        const { data } = await api.get('/products?page=1');
+        console.log(data.content)
+        setProducts(data.content);
       }
       catch (error){
         console.log(error)
@@ -59,7 +58,7 @@ export default function CarouselComponent(){
       return (
         <div className="mt-4 mb-1 d-flex align-items-center">
         <Container className='cont-carousel'>
-            <Slider {...settings}>
+        <Slider {...settings}>
                 {products.map( ( {id, title, description, price, image } ) => (
                     <div className="cards">
                     <Card key={id} className="card-carousel" style={{ width: '21rem' }}>

@@ -1,7 +1,9 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://my-json-server.typicode.com/mauriciogregory/api/products", //aqui será a URL da nossa API
+  baseURL: "http://3.17.135.191:8080", //aqui será a URL da nossa API
 });
 
 export default api; 
+
+

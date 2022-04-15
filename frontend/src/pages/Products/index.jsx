@@ -1,22 +1,32 @@
-import Header from "../../components/header";
+/* import Header from "../../components/header";
 import Footer from "../../components/footer";
 import FooterDown from "../../components/footerdown";
-// import api from '../../service/api';
+import api from '../../service/api';
 import { useEffect, useState } from "react";
-import axios from "axios";
+
 
 // estilos
 import './styles.scss';
 
 
 export default function Products() {
+
   const [products, setProducts] = useState([]);
 
- useEffect(() => {
-    axios.get("http://localhost:8080/products").then((resposta) => {
-      setProducts(resposta.data);
-    });
-  }, []); 
+  useEffect(() => {
+    getApiData()
+    }, []); 
+
+  const getApiData = async () => {
+    try{
+      const { data } = await api.get('/products');
+      console.log(data.content)
+      setProducts(data.content);
+    }
+    catch (error){
+      console.log(error)
+    }
+  }
 
   return (
     <section>
@@ -25,7 +35,7 @@ export default function Products() {
         <ul className="grid-produtos">
           {products.map((produto) => {
             return (
-              <li key={produto.title} className="produto-card">
+              <li key={produto.id} className="produto-card">
                 <ul>
                   <li>
                     <strong>{produto.title}</strong>
@@ -54,3 +64,4 @@ export default function Products() {
     </section>
   );
 }
+*/
