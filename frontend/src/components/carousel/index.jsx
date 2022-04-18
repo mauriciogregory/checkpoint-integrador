@@ -8,6 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 import api from '../../service/api';
 import { GrCart } from 'react-icons/gr';
 import { formatPrice } from '../../hooks/useUtil';
+import { Link } from 'react-router-dom'
 
 export default function CarouselComponent(){
 
@@ -26,6 +27,10 @@ export default function CarouselComponent(){
       catch (error){
         console.log(error)
       }
+    }
+
+    const addCart = () => {
+      alert('Adicionado ao carrinho')
     }
 
     const settings = { //configurações do slider
@@ -68,7 +73,9 @@ export default function CarouselComponent(){
                             <Card.Text className='card-text'>
                              {formatPrice(price)}
                             </Card.Text>
-                            <Button className="card-buy-button">{<GrCart/>}</Button>
+                            <Link className="unstyle" to={`/products/${id}`}>
+                            <Button className="card-buy-button">Ver detalhes</Button> 
+                            </Link>
                         </Card.Body>
                     </Card>
                     </div>

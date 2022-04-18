@@ -20,3 +20,13 @@ export function formatPrice(value) {
         }
             return 'Data não informada'
     }
+
+    export function payment(value){
+        if(value){
+            let result = value / 10
+            return result;
+        }
+        else{
+            return 'Não há um preço definido para este produto'
+        }
+    }

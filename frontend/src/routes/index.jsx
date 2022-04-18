@@ -3,9 +3,10 @@ import Home from "../pages/Home/index";
 import Erro404 from "../pages/404/index";
 import Cart from "../pages/Cart/index";
 import AboutUs from "../pages/AboutUs/index";
+import Products from "../pages/Products/index"
 
 import Admin from "../pages/Admin";
-import Products from "../pages/Products";
+import ProductsDetails from "../pages/ProductsDetails/index";
 
 export default function Rotas() {
   return (
@@ -13,6 +14,7 @@ export default function Rotas() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/products/:id" element={<ProductsDetails />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="*" element={<Erro404 />} />
         <Route path="/cart" element={<Cart />} />

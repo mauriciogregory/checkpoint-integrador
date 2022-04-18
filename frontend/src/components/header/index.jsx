@@ -2,7 +2,6 @@ import { Navbar, Container, Nav } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css'; // BOOTSTRAP
 import './style.scss';
 import { GrCart } from 'react-icons/gr';
-import Logo from '../../assets/img/logo.png'
 import { Link } from 'react-router-dom';
 
 export default function Header(){
@@ -15,16 +14,16 @@ export default function Header(){
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse className="justify-content-end" id="responsive-navbar-nav">
                     <Nav className="nav-list">
-                        <Link to={"/"}>
+                        <Link className="unstyle" to={"/"}>
                             <Nav.Item className="list-header">Home</Nav.Item>
                         </Link>
-                        <Link to={"/products"}>
+                        <Link className="unstyle" to={"/products"}>
                             <Nav.Item className="list-header">Produtos</Nav.Item>
                         </Link>
-                        <Link to={"/about"}>
+                        <Link className="unstyle" to={"/about"}>
                             <Nav.Item className="list-header">Sobre nós</Nav.Item>
                         </Link>
-                        <Link to={"/admin"}>
+                        <Link className="unstyle" to={"/admin"}>
                             <Nav.Item className="list-header">Administração</Nav.Item>
                         </Link>
                     </Nav>
