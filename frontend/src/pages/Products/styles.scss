@@ -1,4 +1,4 @@
-.grid-produtos {
+.grid-produtos-page {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -8,7 +8,7 @@
   margin-top: 2em;
 }
 
-.product-list-item{
+.product-list-item-page{
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   align-items: center;
   transition: all 0.2s ease-in-out;
@@ -21,40 +21,40 @@
   }
 }
 
-.li-card {
+.li-card-page {
   width: 20rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.img-product-list{
+.img-product-list-page{
   width: auto;
   height: 100px;
 }
 
-.title-product-list{
+.title-product-list-page{
   font-size: 3.5rem;
   font-weight: bold;
   color: #000;
   text-align: center;
 }
 
-.description-product-list{
+.description-product-list-page{
   font-size: 1rem!important;
   color: #000;
   text-align: center;
   text-transform: capitalize;
 }
 
-.price-product-list{
+.price-product-list-page{
   font-size: 2rem;
   font-weight: bold;
   color: #000;
   text-align: center;
 }
 
-.button-product-list{
+.button-product-list-page{
   width: 100%;
   height: 50px;
   background-color: #000;

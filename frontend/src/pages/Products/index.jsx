@@ -45,20 +45,20 @@ const test = () => {
     <section>
       <Header />
       <div>
-        <ul className="grid-produtos">
+        <ul className="grid-produtos-page">
           {products.map(( {id, title, image, description, price}) => {
             return (
               <Link className="unstyle" to={`/products/${id}`}>
-              <li key={id} className="li-card" onClick={() => test()} >
-              <Card data-aos="flip-up" data-aos-offset="150" className="product-list-item">
-                  <Card.Img className="img-product-list" variant="top" src={image} />
+              <li key={id} className="li-card-page" onClick={() => test()} >
+              <Card data-aos="flip-up" data-aos-offset="150" className="product-list-item-page">
+                  <Card.Img className="img-product-list-page" variant="top" src={image} />
                   <Card.Body>
-                  <Card.Title className="title-product-list">{title}</Card.Title>
+                  <Card.Title className="title-product-list-page">{title}</Card.Title>
                   <Card.Text className="description-product-list">
                      {description}
                   </Card.Text>
-                  <p className="price-product-list">{formatPrice(price)}</p>
-                  <Button onclick={handlePutOnCart} className="orange border-0 button-product-list" size="lg">Adicionar ao Carrinho</Button>
+                  <p className="price-product-list-page">{formatPrice(price)}</p>
+                  <Button onclick={handlePutOnCart} className="orange border-0 button-product-list-page" size="lg">Adicionar ao Carrinho</Button>
                   </Card.Body>
               </Card>
               </li>
