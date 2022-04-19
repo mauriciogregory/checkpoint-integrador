@@ -3,13 +3,18 @@ import { Container } from 'react-bootstrap'
 import data from '../../data'
 
 export default function CardAbout() {
+
+    function goToLink(link) {
+        window.open(link, '_blank')
+    }
+
     return(
         <Container>
         <div className="cards-about">
-        {data.map( ( {id, name, description, url} ) => (
+        {data.map( ( {id, name, description, url, linkedin} ) => (
         <div key={id} className="card-about-container">
             <div className="img-container">
-                <img className="card-img-about" src={url} alt={description} />
+                <img className="card-img-about" onClick={() => goToLink(linkedin)} src={url} alt={description} />
             </div>
             <div className='title-container'>
                 <h3 className='card-title-about'>{name}</h3>
