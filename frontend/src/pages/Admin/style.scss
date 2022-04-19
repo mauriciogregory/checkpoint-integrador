@@ -1,19 +1,19 @@
+
 .grid-produtos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
     margin-bottom: 2em;
-    width: 100vw;
-    gap: 100px;
-    margin-top: 2em;
+    width: auto;
+    gap: 1.2rem;
+    margin-top: 1.5rem;
   }
   
   .product-list-item{
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     align-items: center;
     transition: all 0.2s ease-in-out;
-    width: 18rem;
-    height: 22rem;
+    width: 20rem;
+    height: 25rem;
     cursor: pointer;
     &:hover {
       transform: scale(1.02);
@@ -31,6 +31,12 @@
   .img-product-list{
     width: auto;
     height: 100px;
+  }
+
+  .card-img {
+    max-width: auto;
+    max-height: 20vh;
+    text-align: center;
   }
   
   .title-product-list{
