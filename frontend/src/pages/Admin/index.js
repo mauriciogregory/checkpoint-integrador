@@ -29,9 +29,9 @@ export default function Admin() {
   // delete
   const [status, setStatus] = useState(null);
 
-  useEffect(() => {
-    deleteProduct();
-  }, []);
+  // useEffect(() => {
+  //   deleteProduct();
+  // }, []);
 
   const deleteProduct = (id) => {
     api.delete(`/products/${id}`).then(() => alert("Deletado com sucesso!"));
@@ -115,7 +115,7 @@ export default function Admin() {
                     </button>
 
 
-                    <button className="button-product-list danger">
+                    <button className="button-product-list danger" onClick={() => deleteProduct(id)}>
                       Excluir
                     </button>
                   </div>
