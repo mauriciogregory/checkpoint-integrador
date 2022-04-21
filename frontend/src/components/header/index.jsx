@@ -2,9 +2,12 @@ import { Navbar, Container, Nav } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css'; // BOOTSTRAP
 import './style.scss';
 import { GrCart } from 'react-icons/gr';
+import { BsFillCartCheckFill } from 'react-icons/bs'
 import { Link } from 'react-router-dom';
+import { useCart } from '../../context/cart';
 
 export default function Header(){
+    const cartCTX = useCart()
     return(
     <header>
         <Navbar className="header-nav"collapseOnSelect expand="lg" variant="light">
@@ -29,7 +32,7 @@ export default function Header(){
                     </Nav>
                     <Nav>
                         <Link to={"/cart"}>
-                            <Nav.Item className="cart-header">{<GrCart/>}</Nav.Item>
+                            <Nav.Item className="cart-header">{cartCTX?.products?.length > 0 ? <BsFillCartCheckFill /> : <GrCart/>}</Nav.Item>
                         </Link>
                     </Nav>
                 </Navbar.Collapse>

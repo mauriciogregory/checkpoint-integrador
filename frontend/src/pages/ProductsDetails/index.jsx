@@ -24,9 +24,8 @@ const ProductsDetails =() =>{
         .catch((err) => console.log(err));
     }, []);
 
-    function handlePutOnCart(e) {
-        e.preventDefault();
-        cartContext.insertInToCart(product);
+    function handlePutOnCart() {
+        cartContext.insertInToCart(product,1);
         alert('Instrumento adicionado ao carrinho!')
     }
 
@@ -54,7 +53,7 @@ const ProductsDetails =() =>{
                         <BsStarFill />
                         <BsStarHalf />
                   </div>
-                <Button onclick={() => handlePutOnCart()} className="orange border-0 button-product-list" size="lg">Adicionar ao Carrinho</Button>
+                <Button onClick={handlePutOnCart} className="orange border-0 button-product-list" size="lg">Adicionar ao Carrinho</Button>
                 </Col>
             </Row>
         </Container>

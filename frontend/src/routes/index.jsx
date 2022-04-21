@@ -7,19 +7,22 @@ import Products from "../pages/Products/index"
 
 import Admin from "../pages/Admin";
 import ProductsDetails from "../pages/ProductsDetails/index";
+import { CartProvider } from "../context/cart";
 
 export default function Rotas() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/products/:id" element={<ProductsDetails />} />
-        <Route path="/admin" element={<Admin />} />
-        <Route path="*" element={<Erro404 />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/about" element={<AboutUs />} />
-      </Routes>
-    </BrowserRouter>
+    <CartProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/products/:id" element={<ProductsDetails />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="*" element={<Erro404 />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/about" element={<AboutUs />} />
+        </Routes>
+      </BrowserRouter>
+    </CartProvider>
   );
 }
