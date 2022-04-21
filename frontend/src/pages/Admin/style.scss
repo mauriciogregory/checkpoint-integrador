@@ -18,11 +18,10 @@
   }
 }
 
-
 @media (max-width: 1100px) {
   .grid-produtos {
     display: grid;
-    grid-template-columns:  1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     margin-bottom: 2em;
     width: auto;
     gap: 1.2rem;
@@ -107,21 +106,27 @@
 }
 
 .button-product-list-adicionar {
-  width: 20%;
-  height: 50px;
+  width: 60%;
+  height: 60px;
   background-color: rgb(20, 13, 59);
   color: #fff;
   border: none;
   border-radius: 5px;
   margin: 0.5rem;
+  text-align: center;
+  padding: 0.3rem;
   &:hover {
     background-color: rgb(255, 60, 0);
   }
 }
 
-.botao-adicionar {
-  text-align: center;
-  margin: 1rem;
+.adicionar-produto {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(236, 236, 236, 0.911);
 }
 
 .botoes {
@@ -135,5 +140,24 @@ button {
   padding: 0.5rem;
 }
 
+.container-botao {
+  text-align: center;
+}
+
 .formulario {
+  display: flex;
+  margin: 1rem;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+input {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  margin: 0.3rem 0;  
+}
+
+.modal-inputs {
+  margin: 0.5rem 5rem;
 }

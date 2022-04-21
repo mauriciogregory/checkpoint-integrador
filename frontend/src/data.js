@@ -8,7 +8,7 @@ const data = [
     },
     {   
         id: 2,
-        name: 'Maurício',
+        name: 'Mauricio',
         description: 'Full-stack developer',
         url: 'https://avatars.githubusercontent.com/u/33768118?v=4',
         linkedin: 'https://www.linkedin.com/in/mauriciogregory/'

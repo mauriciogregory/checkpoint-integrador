@@ -112,6 +112,7 @@ export default function Admin() {
           <input placeholder="Description" />
           <input placeholder="Price" />
           <input placeholder="URL da Imagem" /> */}
+          <div className="modal-inputs">
 
           <div>
             <label htmlFor="id">ID:</label>
@@ -120,7 +121,7 @@ export default function Admin() {
               type="number"
               value={ID}
               onChange={(event) => setId(event.target.value)}
-            />
+              />
           </div>
           <div>
             <label htmlFor="Title">Title:</label>
@@ -151,7 +152,7 @@ export default function Admin() {
               type={formatPrice("text")}
               value={price}
               onChange={(event) => setPrice(event.target.value)}
-            />
+              />
           </div>
           <div>
             <label htmlFor="image">Imagem :</label>
@@ -161,13 +162,15 @@ export default function Admin() {
               type="text"
               value={image}
               onChange={(event) => setImage(event.target.value)}
-            />
+              />
           </div>
-
-          <button type="submit">Salvar</button>
-          <button type="button" onClick={() => setModalVisible(false)}>
-            Cancelar
-          </button>
+          <div className="botoes">
+            <button className="button-product-list-adicionar secondary" type="submit">Salvar</button>
+            <button className="button-product-list-adicionar secondary" type="button" onClick={() => setModalVisible(false)}>
+              Cancelar
+            </button>
+          </div>
+        </div>
         </form>
       </Modal>
 
@@ -195,15 +198,15 @@ export default function Admin() {
                     <p>Preço: {formatPrice(price)}</p>
                   </li>
                   <div className="botoes">
-                      <button
-                        className="button-product-list danger"
-                        onChange={(event) => setId(event.target.value)}
-                        onClick={() => {
-                          setModalVisible(true);
-                        }}
-                      >
-                        Novo Cadastro
-                      </button>
+                    <button
+                      className="button-product-list danger"
+                      onChange={(event) => setId(event.target.value)}
+                      onClick={() => {
+                        setModalVisible(true);
+                      }}
+                    >
+                      Novo Cadastro
+                    </button>
                     <button
                       className="button-product-list danger"
                       onClick={() => deleteProduct(id)}
@@ -219,10 +222,10 @@ export default function Admin() {
       </div>
 
       {/* Form adicionar novos produtos */}
-      <div className="botao-adicionar">
-        <div className="formulario">
-          <h3>Adicionar Novo Produto ao Banco de Dados:</h3>
-          <form onSubmit={handleSubmitPost}>
+      <div className="adicionar-produto">
+        <h3>Adicionar Novo Produto ao Banco de Dados:</h3>
+        <div>
+          <form onSubmit={handleSubmitPost} className="formulario">
             <div>
               <label htmlFor="title">Title:</label>
               <input
@@ -264,7 +267,7 @@ export default function Admin() {
               />
             </div>
 
-            <div>
+            <div className="container-botao">
               <button className="button-product-list-adicionar" type="submit">
                 Adicionar Novo Produto
               </button>
